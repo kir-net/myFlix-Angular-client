@@ -28,7 +28,8 @@ export class UserRegistrationFormComponent implements OnInit {
     
     // send the form inputs to the backend
     registerUser(): void {
-        this.fetchApiData.userRegistration(this.userData)
+        this.fetchApiData
+        .userRegistration(this.userData)
         .subscribe((response) => {
             // Logic for a successful user registration here
             this.dialogRef.close(); // close dialog on success
@@ -39,6 +40,5 @@ export class UserRegistrationFormComponent implements OnInit {
             console.log(response);
             this.snackBar.open(response, 'OK', {duration: 2000})
         });
-    }
-    
+    }  
 }      
