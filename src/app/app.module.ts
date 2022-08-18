@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 // import simplified API for Angular apps that makes it possible for
 // the client app to communicate with the API or server-side
@@ -22,28 +23,35 @@ import { FormsModule } from '@angular/forms';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
+const appRoutes: Routes = [
+    { path: 'welcome', component: WelcomePageComponent },
+    { path: 'movies', component: MovieCardComponent },
+    { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserRegistrationFormComponent,
-    UserLoginFormComponent,
-    MovieCardComponent,
-    WelcomePageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UserRegistrationFormComponent,
+        UserLoginFormComponent,
+        MovieCardComponent,
+        WelcomePageComponent
+    ],
+    imports: [
+        RouterModule.forRoot(appRoutes),
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
