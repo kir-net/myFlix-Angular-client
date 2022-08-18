@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
@@ -38,6 +38,7 @@ export class FetchApiDataService {
    
     // API call: Get all Movies
     getAllMovies(): Observable<any> {
+        const token = localStorage.getItem('token');
         return this.http
         .get(apiUrl + 'movies', {
             headers: new HttpHeaders({Authorization: 'Bearer ' + token})
@@ -159,7 +160,8 @@ export class FetchApiDataService {
                 `Error Status code ${error.status}, ` +
                 `Error Body is: ${error.error}`
             );
-        }       
+        }
+        return throwError('Something bad happened; please try again later.');       
     }
  
 }    
