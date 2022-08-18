@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://flix-db-823.herokuapp.com';
+const apiUrl = 'https://flix-db-823.herokuapp.com/';
 
 // Get token and username from localStorage
 const token = localStorage.getItem('token');
