@@ -22,6 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
         MatFormFieldModule,
         MatDialogModule,
         MatSnackBarModule,
-        FormsModule
+        FormsModule,
+        MatIconModule 
     ],
     providers: [],
     bootstrap: [AppComponent]
