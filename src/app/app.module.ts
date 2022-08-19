@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
+import { MovieDetailsCardComponent } from './movie-details-card/movie-details-card.component';
 
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
         WelcomePageComponent,
         UserProfileComponent,
         GenreCardComponent,
-        DirectorCardComponent
+        DirectorCardComponent,
+        MovieDetailsCardComponent
     ],
     imports: [
         RouterModule.forRoot(appRoutes),
