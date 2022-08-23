@@ -7,10 +7,10 @@
 
 .card-internals { 
     margin: 25px;
-    justify-content: space-between; 
+    justify-content: space-around; 
     display: flex;
-    min-width: 250px; 
-    max-width: 25%;
+    min-width: 240px; 
+    max-width: 240px;
     flex-direction: column;
     box-shadow: 0 0 4px 1px rgb(88, 88, 88);
 }
@@ -21,18 +21,19 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 50px 0;
-    background-color:#C9E0E9;
+    background-color:#ffbf00d6;
 }
 
+mat-card-title:hover{
+    letter-spacing: 0.12vw;
+}
 
 img{
-    box-shadow: 0 0 2px 2px  rgb(115, 115, 115);
     border-radius: 4px;
 }
 
 img:hover {
-    box-shadow: 1px -4px 4px 4px  rgb(145, 145, 145);
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 
 

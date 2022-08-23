@@ -1,1 +1,19 @@
-<p>director-card works!</p>
+<!doctype html>
+
+<mat-card  style="padding:10px; color: rgb(76, 165, 255); background-color: rgba(0, 0, 0, 0.827)">
+
+
+    <mat-card-header style="padding-top:15px;">
+        <mat-card-title>Director Info:</mat-card-title>
+        <mat-card-title>{{data.Name}}  (born {{data.Birth}}) </mat-card-title>
+    </mat-card-header>
+
+     
+    <mat-card-content>
+        <div style="padding:15px;">
+            {{data.Description}} 
+        </div>             
+    </mat-card-content>
+
+
+</mat-card>

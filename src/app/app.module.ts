@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
@@ -29,10 +30,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
 import { MovieDetailsCardComponent } from './movie-details-card/movie-details-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
     { path: 'movies', component: MovieCardComponent },
+    { path: 'user-profile', component: UserProfileComponent },
     { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -46,7 +49,8 @@ const appRoutes: Routes = [
         UserProfileComponent,
         GenreCardComponent,
         DirectorCardComponent,
-        MovieDetailsCardComponent
+        MovieDetailsCardComponent,
+        NavbarComponent
     ],
     imports: [
         RouterModule.forRoot(appRoutes),
@@ -58,6 +62,7 @@ const appRoutes: Routes = [
         MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
+        MatToolbarModule,
         MatDialogModule,
         MatSnackBarModule,
         MatDividerModule,

@@ -1,1 +1,18 @@
-<p>movie-details-card works!</p>
+<!doctype html>
+
+<mat-card  style="padding:10px; color: rgb(76, 165, 255); background-color: rgba(0, 0, 0, 0.827)">
+
+    <mat-card-header>
+        <mat-card-title>{{data.Title}}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-dialog-content class="genre-dialog-content">
+        <br>{{ data.Description }}
+    </mat-dialog-content>
+
+    <mat-dialog-content class="genre-dialog-content">
+        <br><i>Starring: </i><br>{{ data.Actors.join(', ') }}
+    </mat-dialog-content>
+
+
+</mat-card>

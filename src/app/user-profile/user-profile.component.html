@@ -1,1 +1,65 @@
-<p>user-profile works!</p>
+<!doctype html>
+
+<mat-card>
+
+    <mat-card-header class="user-profile-card-header">
+        <mat-card-title>Profile Information</mat-card-title>
+    </mat-card-header>
+
+    <!-- View Profile Information -->
+    <mat-card-content class="user-profile-card-content">
+        <p><b>Username:</b> {{user.Username}}</p>
+        <p><b>Email:</b> {{user.Email}}</p>
+        <p><b>Birthday:</b> {{user.Birthday | date }}</p>
+    </mat-card-content>
+
+  </mat-card>
+
+
+  <mat-card class="card-internals" *ngFor="let movie of filteredMovies;" style="flex: 1 1 auto;">
+
+    <mat-card-header 
+        class="center" 
+        style="              
+            padding-top: 10px;
+            margin-bottom: 15px; 
+            border: 1px solid rgb(181, 181, 181);
+            border-radius: 3px;
+            height: 190px;
+            "
+    >
+        
+        <mat-card-title class="center">
+            {{movie.Title}}
+        </mat-card-title>           
+          
+    </mat-card-header>
+
+    
+    <div class="center">
+        <img 
+        src={{movie.ImagePath}} 
+        alt= {{movie.Title}}
+        width = 100%       
+    />
+    </div>
+          
+    <mat-card-footer >                       
+        <button
+            mat-stroked-button
+            color="basic"
+            style="
+                width: 88%; 
+                margin-left: 6%; 
+                margin-bottom:10px; 
+                margin-top:10px; 
+                height: 50px;
+                border: 1px solid rgb(181, 181, 181);                      
+            "
+        >  <mat-icon 
+                style="color:tomato;"         
+                    >favorite_border
+            </mat-icon>  
+        </button>                                                      
+    </mat-card-footer>        
+</mat-card>

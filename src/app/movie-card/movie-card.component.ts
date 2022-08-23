@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service'
 
 import { GenreCardComponent } from '../genre-card/genre-card.component';
 import { DirectorCardComponent } from '../director-card/director-card.component';
+import { MovieDetailsCardComponent } from '../movie-details-card/movie-details-card.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,10 +11,9 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss']
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent implements OnInit {  
 
-    
-
+    user: any = {};
     movies: any[] = [];
     constructor(
         public dialog: MatDialog,
@@ -34,6 +34,15 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
+    getUser(): void {
+        this.fetchApiData
+        .getUser().subscribe((response:any) => {   
+            this.user = response; 
+            console.log(this.user);
+            return this.user;
+        });
+    }
+
 
     openGenreCard(name: string, description: string): void {
         this.dialog.open(GenreCardComponent, {
@@ -51,12 +60,35 @@ export class MovieCardComponent implements OnInit {
             data: {
                 Name: name,
                 Description: description,
-                Birth:birth,
-                Death:death
+                Birth: birth,
+                Death: death
             },
             // Assign dialog width
             width: '500px'
         })
+    }
+
+    openMovieDetailsCard(title:string, description:string, actors:string[]): void {
+        this.dialog.open(MovieDetailsCardComponent, {
+            data: {
+                Title: title,
+                Description: description,
+                Actors: actors
+            },
+            // Assign dialog width
+            width: '500px'
+        })
+    }
+
+    addtoFavoriteMovies(movie_id:string): void {
+        this.fetchApiData
+        .addFavorite(movie_id)
+        .subscribe((response) => {
+            console.log(response);
+        }, 
+        (response) => {
+            console.log(response);
+        });
     }
 
   }
