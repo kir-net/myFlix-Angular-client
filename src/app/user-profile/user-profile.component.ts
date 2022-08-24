@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
+import { EditUserComponent } from '../edit-user/edit-user.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import { AppModule } from '../app.module';
@@ -61,6 +62,13 @@ export class UserProfileComponent implements OnInit {
         .subscribe((response) => {
             console.log(response);
             window.location.reload();
+        });
+    }
+
+    // button click --> edit user information 
+    openEditUserDialog(): void {
+        this.dialog.open(EditUserComponent, {
+            width: '280px'
         });
     }
 

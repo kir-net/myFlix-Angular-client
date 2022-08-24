@@ -131,14 +131,13 @@ export class FetchApiDataService {
 
     // API call: Edit user
     editUser(userData: any): Observable<any> {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('user');
         return this.http
-        .put(apiUrl + 'users/' + username, {userData}, {
+        .put(apiUrl + `users/${username}`, userData, {
             headers: new HttpHeaders({Authorization: 'Bearer ' + token})
         })
-        .pipe(
-            map(this.extractResponseData),
-            catchError(this.handleError)
-        );
+        
     }
 
     // API call: Delete user
