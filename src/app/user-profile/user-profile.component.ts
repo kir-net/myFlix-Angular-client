@@ -55,4 +55,13 @@ export class UserProfileComponent implements OnInit {
         return remainingMovies;
     }
 
+    removeFromFavoriteMovies(movie_id:string): void {
+        this.fetchApiData
+        .removeFavorite(movie_id)
+        .subscribe((response) => {
+            console.log(response);
+            window.location.reload();
+        });
+    }
+
 }

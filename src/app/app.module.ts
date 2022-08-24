@@ -31,6 +31,7 @@ import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DirectorCardComponent } from './director-card/director-card.component';
 import { MovieDetailsCardComponent } from './movie-details-card/movie-details-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
         GenreCardComponent,
         DirectorCardComponent,
         MovieDetailsCardComponent,
-        NavbarComponent
+        NavbarComponent,
+        EditUserComponent
     ],
     imports: [
         RouterModule.forRoot(appRoutes),

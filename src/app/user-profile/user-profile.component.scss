@@ -1,0 +1,72 @@
+.background-div{
+    background-color: black;
+}
+
+.mainframe-div{
+    margin: 0 auto;
+    max-width: 870px;
+    background-color:#ffbf00;
+}
+
+.profile-view{
+    display: flex;
+    margin: 0 auto;
+}
+
+.profile-info{
+    margin: 50px auto;
+}
+
+.user-profile-card-header{
+    justify-content:center; /* align horizontal */
+    padding-top: 15px;
+}
+
+.user-profile-card-content{
+    padding: 20px 0 5px;
+}
+
+mat-raised-button{
+    padding: 100px;
+}
+
+.center {
+    display: flex;
+    justify-content:center; /* align horizontal */
+    align-items: center; /* align vertical */
+    text-align: center;
+}
+
+.title-my-favs{
+    text-align: center;
+    padding: 60px 0 30px;
+
+}
+
+.card-internals { 
+    margin: 15px;
+    justify-content: space-around; 
+    display: flex;
+    min-width: 180px; 
+    max-width: 180px;
+    flex-direction: column;
+    box-shadow: 0 0 4px 1px rgb(88, 88, 88);
+}
+
+.movie-view {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+
+img{
+    border-radius: 4px;
+}
+
+mat-icon:hover {
+    transform: scale(1.5);
+}
+

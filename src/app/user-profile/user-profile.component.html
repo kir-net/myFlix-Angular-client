@@ -1,65 +1,80 @@
 <!doctype html>
 
-<mat-card>
+<div class="background-div">
+    <div class="mainframe-div">
 
-    <mat-card-header class="user-profile-card-header">
-        <mat-card-title>Profile Information</mat-card-title>
-    </mat-card-header>
-
-    <!-- View Profile Information -->
-    <mat-card-content class="user-profile-card-content">
-        <p><b>Username:</b> {{user.Username}}</p>
-        <p><b>Email:</b> {{user.Email}}</p>
-        <p><b>Birthday:</b> {{user.Birthday | date }}</p>
-    </mat-card-content>
-
-  </mat-card>
-
-
-  <mat-card class="card-internals" *ngFor="let movie of filteredMovies;" style="flex: 1 1 auto;">
-
-    <mat-card-header 
-        class="center" 
-        style="              
-            padding-top: 10px;
-            margin-bottom: 15px; 
-            border: 1px solid rgb(181, 181, 181);
-            border-radius: 3px;
-            height: 190px;
-            "
-    >
+        <section class="profile-view center">
+            <mat-card class="profile-info">
         
-        <mat-card-title class="center">
-            {{movie.Title}}
-        </mat-card-title>           
-          
-    </mat-card-header>
+                <mat-card-header class="user-profile-card-header">
+                    <mat-card-title>Profile Information</mat-card-title>
+                </mat-card-header>
+                <span style="color:dodgerblue"> &#10070;</span>
+                <!-- View Profile Information -->
+                <mat-card-content class="user-profile-card-content">
+                    <p><b>Username:</b> {{user.Username}}</p>
+                    <p><b>Email:</b> {{user.Email}}</p>
+                    <p><b>Birthday:</b> {{user.Birthday | date }}</p>
+                </mat-card-content>
 
-    
-    <div class="center">
-        <img 
-        src={{movie.ImagePath}} 
-        alt= {{movie.Title}}
-        width = 100%       
-    />
+                <mat-card-actions>
+                    <button
+                        mat-raised-button
+                        
+                        color="primary"
+                    >
+                        EDIT
+                    </button>
+                </mat-card-actions>
+            
+            </mat-card>      
+        </section><br>
+        
+        
+        <div class="title-my-favs" style="background-color:black; color: white">
+            <h1> 
+                <span style="color:dodgerblue"> &#10070;</span>  
+                My favorite movies 
+                <span style="color:dodgerblue"> &#10070;</span> 
+            </h1>
+        </div>
+
+        <section class="movie-view" style="display: flex;">
+            
+            <mat-card class="card-internals" *ngFor="let movie of filteredMovies;" style="flex: 1 1 auto;">
+        
+                
+                <div class="center">
+                    <img 
+                    src={{movie.ImagePath}} 
+                    alt= {{movie.Title}}
+                    width = 100%       
+                />
+                </div>
+                        
+                <mat-card-footer tooltip="remove" >                       
+                    <button
+                        mat-stroked-button
+                        (click)="removeFromFavoriteMovies(movie._id)"
+                        
+                        color="basic"
+                        style="
+                            width: 88%; 
+                            margin-left: 6%; 
+                            margin-bottom:10px; 
+                            margin-top:10px; 
+                            height: 50px;
+                            border: 1px solid rgb(181, 181, 181); 
+                                                
+                        "
+                    >  <mat-icon                             
+                                >delete_forever
+                        </mat-icon>  
+                    </button>                                                      
+                </mat-card-footer>        
+            </mat-card> 
+        </section>
+
     </div>
-          
-    <mat-card-footer >                       
-        <button
-            mat-stroked-button
-            color="basic"
-            style="
-                width: 88%; 
-                margin-left: 6%; 
-                margin-bottom:10px; 
-                margin-top:10px; 
-                height: 50px;
-                border: 1px solid rgb(181, 181, 181);                      
-            "
-        >  <mat-icon 
-                style="color:tomato;"         
-                    >favorite_border
-            </mat-icon>  
-        </button>                                                      
-    </mat-card-footer>        
-</mat-card>
+</div>
+
