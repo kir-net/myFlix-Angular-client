@@ -38,6 +38,13 @@ $myFlix-Angular-client-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.mat-card-header .mat-card-subtitle:not(:first-child) {
-    margin-top: -20px;
+.background-div{
+    background-color: black;
+}
+
+.mainframe-div{
+    margin: 0 auto;
+    max-width: 1250px;
+    background-color:#ffbf00;
+    box-shadow:  0 0 1px 1px white;
 }

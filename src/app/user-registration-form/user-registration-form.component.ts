@@ -33,8 +33,7 @@ export class UserRegistrationFormComponent implements OnInit {
         .subscribe((response) => {
             // Logic for a successful user registration here
             this.dialogRef.close(); // close dialog on success
-            console.log(response);
-            this.snackBar.open(response, 'OK', {duration: 2000});
+            this.snackBar.open('', 'Welcome! Please log in.', {duration: 3000});
         }, 
         (response) => {
             console.log(response);

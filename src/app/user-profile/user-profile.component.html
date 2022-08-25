@@ -9,7 +9,7 @@
                 <mat-card-header class="user-profile-card-header">
                     <mat-card-title>Profile Information</mat-card-title>
                 </mat-card-header>
-                <span style="color:dodgerblue"> &#10070;</span>
+                <span> &#10070;</span>
                 <!-- View Profile Information -->
                 <mat-card-content class="user-profile-card-content">
                     <p><b>Username:</b> {{user.Username}}</p>
@@ -31,17 +31,17 @@
         </section><br>
         
         
-        <div class="title-my-favs" style="background-color:black; color: white">
+        <div class="title-my-favs">
             <h1> 
-                <span style="color:dodgerblue"> &#10070;</span>  
+                <span> &#10070;</span>  
                 My favorite movies 
-                <span style="color:dodgerblue"> &#10070;</span> 
+                <span> &#10070;</span> 
             </h1>
         </div>
 
-        <section class="movie-view" style="display: flex;">
+        <section class="movie-view">
             
-            <mat-card class="card-internals" *ngFor="let movie of filteredMovies;" style="flex: 1 1 auto;">
+            <mat-card class="card-internals" *ngFor="let movie of filteredMovies;">
         
                 
                 <div class="center">
@@ -55,21 +55,10 @@
                 <mat-card-footer tooltip="remove" >                       
                     <button
                         mat-stroked-button
-                        (click)="removeFromFavoriteMovies(movie._id)"
-                        
-                        color="basic"
-                        style="
-                            width: 88%; 
-                            margin-left: 6%; 
-                            margin-bottom:10px; 
-                            margin-top:10px; 
-                            height: 50px;
-                            border: 1px solid rgb(181, 181, 181); 
-                                                
-                        "
-                    >  <mat-icon                             
-                                >delete_forever
-                        </mat-icon>  
+                        (click)="removeFromFavoriteMovies(movie._id)"                       
+                        color="basic"                    
+                    >  
+                        <mat-icon> delete_forever </mat-icon>  
                     </button>                                                      
                 </mat-card-footer>        
             </mat-card> 
