@@ -24,7 +24,7 @@ export class MovieCardComponent implements OnInit {
         this.getMovies();
     }
     
-
+    
     getMovies(): void {
         this.fetchApiData
         .getAllMovies().subscribe((resp: any) => {
@@ -33,6 +33,7 @@ export class MovieCardComponent implements OnInit {
             return this.movies;
         });
     }
+
 
     getUser(): void {
         this.fetchApiData
